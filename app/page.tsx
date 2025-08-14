@@ -16,6 +16,10 @@ export default function ApoteaCheckout() {
   const [showPopup, setShowPopup] = useState(false);
 
   const [customerInfo, setCustomerInfo] = useState({
+    organisationsnummer: "945444--5478",
+    foretagsnamn: 'Test företag AB',
+    referens: 'Egen ref.',
+    mejladress: 'företgsmejl@mejl.com',
     email: 'christophersalame@gmail.com',
     postnummer: '461 30',
     fornamn: 'Christopher',
@@ -26,7 +30,7 @@ export default function ApoteaCheckout() {
     mobilnummer: '073••••254'
   });
 
-  const handleInputChange = (field, value) => {
+  const handleInputChange = (field: string, value: string) => {
     setCustomerInfo(prev => ({
       ...prev,
       [field]: value

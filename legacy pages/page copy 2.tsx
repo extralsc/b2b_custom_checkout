@@ -17,7 +17,7 @@ export default function ApoteaCheckout() {
     mobilnummer: '073••••254'
   });
 
-  const handleInputChange = (field, value) => {
+  const handleInputChange = (field: string, value: string) => {
     setCustomerInfo(prev => ({
       ...prev,
       [field]: value
