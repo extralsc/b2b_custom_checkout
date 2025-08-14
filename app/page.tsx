@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { CreditCard, Building, X, ChevronRight } from 'lucide-react';
-import { useCheckout } from '@/context/CheckoutSettings';
+import { useCheckout } from '@/context/Checkout';
 
 export default function ApoteaCheckout() {
 

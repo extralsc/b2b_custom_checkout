@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useCallback, useEffect } from 'react'
-import { useCheckout } from '@/context/CheckoutSettings';
+import { useCheckout } from '@/context/Checkout';
 import {
     Select,
     SelectContent,
@@ -20,7 +20,7 @@ function DebugLayout({ children }: { children: React.ReactNode }) {
         resetCheckoutSettings
     } = useCheckout();
 
-    const hideHeader = !checkoutSettings.debug || false;
+    const hideHeader = !checkoutSettings.debug;
 
     const updateHeaderDebugSetting = useCallback(() => {
         updateCheckoutSetting("debug", !checkoutSettings.debug);

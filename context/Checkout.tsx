@@ -6,7 +6,7 @@ import type { CheckoutSettings, CheckoutContextType } from "@/types/checkout"
 const initialSettings: CheckoutSettings = {
     isShipping: true,
     customerType: "company",
-    debug: true
+    debug: false
 }
 
 const CheckoutContext = createContext<CheckoutContextType | undefined>(undefined)
