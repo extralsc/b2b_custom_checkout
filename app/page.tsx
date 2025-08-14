@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from 'react';
-import { CreditCard, Building, Smartphone, X, ChevronRight } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { CreditCard, Building, X, ChevronRight } from 'lucide-react';
 
 type CustomerType = "private" | "company";
 
@@ -32,6 +32,12 @@ export default function ApoteaCheckout() {
       [field]: value
     }));
   };
+
+  useEffect(() => {
+    setCustomerType("company");
+    setIsShipping(true);
+  }, [])
+
 
   return (
     <div className='bg-white mx-auto'>
@@ -752,8 +758,10 @@ export default function ApoteaCheckout() {
           {/* Purchase Button */}
           <div className="max-w-md mx-auto mt-5 pt-3">
             <button
-              className={`w-full py-3 rounded-lg text-white font-medium text-md mb-4 ${isEditing ? 'bg-gray-400 cursor-not-allowed' : 'bg-gray-900 hover:bg-gray-800'
-                }`}
+              className={
+                `w-full py-3 rounded-lg text-white font-medium text-md mb-4 
+                ${isEditing ? 'bg-gray-400 cursor-not-allowed' : 'bg-gray-900 hover:bg-gray-800'}
+                `}
               disabled={isEditing}
             >
               {isEditing ? 'Betala köp' : 'Betala köp'}
@@ -761,7 +769,7 @@ export default function ApoteaCheckout() {
 
             {/* Terms */}
             <div className="text-left mt-3 text-xs text-gray-600 mb-6">
-              Genom att klicka på "Betala köp" godkänner jag{' '}
+              Genom att klicka på &quot;Betala köp&quot; godkänner jag{' '}
               <button className="text-neutral-600 hover:text-neutral-500 underline hover:underline">Kustoms villkor</button>
               , bekräftar{' '}
               <button className="text-neutral-600 hover:text-neutral-500 underline hover:underline">dataskyddsinformationen</button>
