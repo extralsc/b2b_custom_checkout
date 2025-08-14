@@ -73,7 +73,7 @@ export default function ApoteaCheckout() {
             </div>
             <button
               onClick={() => setIsEditing(!isEditing)}
-              className="text-sky-600 hover:text-sky-700 font-medium underline"
+              className="text-sky-600 hover:text-sky-700 underline"
             >
               {isEditing ? 'Avbryt' : 'Ändra'}
             </button>
@@ -752,7 +752,7 @@ export default function ApoteaCheckout() {
           {customerType == "company" && (
             <div className="flex justify-between items-center text-sm mt-2 border-t border-neutral-100 pt-2">
               <span className="text-gray-600">Totalbelopp exkl. moms</span>
-              <span className="font-medium text-gray-600 text-sm">71,2 kr</span>
+              <span className=" text-gray-600 text-sm">71,2 kr</span>
             </div>
           )}
 
