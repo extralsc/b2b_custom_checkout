@@ -1,13 +1,18 @@
 "use client"
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { CreditCard, Building, X, ChevronRight } from 'lucide-react';
-
-type CustomerType = "private" | "company";
+import { useCheckout } from '@/context/CheckoutSettings';
 
 export default function ApoteaCheckout() {
-  const [customerType, setCustomerType] = useState<CustomerType>("company");
-  const [isShipping, setIsShipping] = useState(true)
+
+  const {
+    checkoutSettings,
+  } = useCheckout();
+
+  const customerType = checkoutSettings.customerType;
+  const isShipping = checkoutSettings.isShipping;
+
   const [hideDetails, setHideDetails] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState('direct');
@@ -36,12 +41,6 @@ export default function ApoteaCheckout() {
       [field]: value
     }));
   };
-
-  useEffect(() => {
-    setCustomerType("company");
-    setIsShipping(true);
-  }, [])
-
 
   return (
     <div className='bg-white mx-auto'>
