@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState } from 'react';
 import { CreditCard, Building, Smartphone, X, ChevronRight } from 'lucide-react';
 
