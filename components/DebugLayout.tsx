@@ -30,7 +30,7 @@ function DebugLayout({ children }: { children: React.ReactNode }) {
         if (val != checkoutSettings.customerType) updateCheckoutSetting("customerType", val);
     }
 
-    const updateShipping = (val: boolean) => {
+    const updateShipping = (val: string) => {
         const boolVal = (val === "true");
         if (boolVal != checkoutSettings.isShipping) updateCheckoutSetting("isShipping", boolVal);
     }
